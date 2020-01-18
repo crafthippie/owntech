@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+source /usr/bin/entrypoint
+
+if [ -d /etc/override ]
+then
+    echo "> copy override content"
+    cp -rf /etc/override/* /usr/share/minecraft/
+fi
+
+if [ ! -d /var/lib/minecraft/logs ]
+then
+    echo "> creating logs dir"
+    mkdir -p /var/lib/minecraft/logs
+fi
+
+if [ ! -L /usr/share/minecraft/logs ]
+then
+    echo "> creating logs symlink"
+    ln -sf /var/lib/minecraft/logs /usr/share/minecraft/logs
+fi
+
+if [ ! -d /var/lib/minecraft/world ]
+then
+    echo "> creating world dir"
+    mkdir -p /var/lib/minecraft/world
+fi
+
+if [ ! -L /usr/share/minecraft/world ]
+then
+    echo "> creating world symlink"
+    ln -sf /var/lib/minecraft/world /usr/share/minecraft/world
+fi
+
+if [ ! -f /var/lib/minecraft/banned-ips.json ]
+then
+    echo "> creating banned-ips file"
+    echo "[]" > /var/lib/minecraft/banned-ips.json
+fi
+
+if [ ! -L /usr/share/minecraft/banned-ips.json ]
+then
+    echo "> creating banned-ips symlink"
+    ln -sf /var/lib/minecraft/banned-ips.json /usr/share/minecraft/banned-ips.json
+fi
+
+if [ ! -f /var/lib/minecraft/banned-players.json ]
+then
+    echo "> creating banned-players file"
+    echo "[]" > /var/lib/minecraft/banned-players.json
+fi
+
+if [ ! -L /usr/share/minecraft/banned-players.json ]
+then
+    echo "> creating banned-players symlink"
+    ln -sf /var/lib/minecraft/banned-players.json /usr/share/minecraft/banned-players.json
+fi
+
+if [ ! -f /var/lib/minecraft/ops.json ]
+then
+    echo "> creating ops file"
+    echo "[]" > /var/lib/minecraft/ops.json
+fi
+
+if [ ! -L /usr/share/minecraft/ops.json ]
+then
+    echo "> creating ops symlink"
+    ln -sf /var/lib/minecraft/ops.json /usr/share/minecraft/ops.json
+fi
+
+if [ ! -f /var/lib/minecraft/whitelist.json ]
+then
+    echo "> creating whitelist file"
+    echo "[]" > /var/lib/minecraft/whitelist.json
+fi
+
+if [ ! -L /usr/share/minecraft/whitelist.json ]
+then
+    echo "> creating whitelist symlink"
+    ln -sf /var/lib/minecraft/whitelist.json /usr/share/minecraft/whitelist.json
+fi
+
+if [ ! -f /var/lib/minecraft/usercache.json ]
+then
+    echo "> creating usercache file"
+    echo "[]" > /var/lib/minecraft/usercache.json
+fi
+
+if [ ! -L /usr/share/minecraft/usercache.json ]
+then
+    echo "> creating usercache symlink"
+    ln -sf /var/lib/minecraft/usercache.json /usr/share/minecraft/usercache.json
+fi
+
+if [ ! -f /var/lib/minecraft/server.properties ]
+then
+    echo "> creating properties file"
+    cp /etc/templates/server.properties /var/lib/minecraft/server.properties
+fi
+
+if [ ! -L /usr/share/minecraft/server.properties ]
+then
+    echo "> creating properties symlink"
+    ln -sf /var/lib/minecraft/server.properties /usr/share/minecraft/server.properties
+fi
+
+if [ -n "${SERVER_MOTD}" ]
+then
+    echo "> writing motd message"
+    sed -i -e "s/motd=.*/motd=${SERVER_MOTD}/" /var/lib/minecraft/server.properties
+fi
+
+if [ -n "${SERVER_RCONPWD}" ]
+then
+    echo "> writing rcon password"
+    sed -i -e "s/rcon\.password=.*/rcon\.password=${SERVER_RCONPWD}/" /var/lib/minecraft/server.properties
+fi
