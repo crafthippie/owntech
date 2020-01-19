@@ -2,6 +2,16 @@ SHELL := bash
 NAME := ownTech
 DIST := dist
 
+UNAME := $(shell uname -s)
+
+ifeq ($(UNAME), Darwin)
+	SED ?= gsed
+	SHASUM ?= shasum -a 256
+else
+	SED ?= sed
+	SHASUM ?= sha256sum
+endif
+
 ifndef OUTPUT
 	ifneq ($(DRONE_TAG),)
 		OUTPUT ?= $(subst v,,$(DRONE_TAG))
@@ -36,6 +46,7 @@ docs:
 .PHONY: package
 package: $(DIST)
 	cp -rf client $(DIST)/$(NAME)-$(OUTPUT)
-	sed -i 's/VERSION/$(VERSION)/' $(DIST)/$(NAME)-$(OUTPUT)/manifest.json
+	$(SED) -i 's/VERSION/$(VERSION)/' $(DIST)/$(NAME)-$(OUTPUT)/manifest.json
 	cd $(DIST) && zip -rm $(NAME)-$(OUTPUT).zip $(NAME)-$(OUTPUT) -x \*.DS_Store
+	cd $(DIST) && $(SHASUM) $(NAME)-$(OUTPUT).zip >| $(NAME)-$(OUTPUT).zip.sha256
 	rm -rf $(DIST)/$(NAME)-$(OUTPUT)
