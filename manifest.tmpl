@@ -6,11 +6,11 @@ tags:
 {{/each}}
 {{/if}}
 manifests:
-  - image: crafthippie/owntech:{{#if build.tag}}{{trimPrefix "v" build.tag}}-{{/if}}linux-amd64
+  - image: crafthippie/owntech:{{#if build.tag}}{{trimPrefix "v" build.tag}}-{{/if}}amd64
     platform:
       architecture: amd64
       os: linux
-  - image: crafthippie/owntech:{{#if build.tag}}{{trimPrefix "v" build.tag}}-{{/if}}linux-arm64v8
+  - image: crafthippie/owntech:{{#if build.tag}}{{trimPrefix "v" build.tag}}-{{/if}}arm64v8
     platform:
       architecture: arm64
       variant: v8
