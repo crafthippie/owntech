@@ -216,7 +216,7 @@ def client(ctx):
       },
       'path_style': True,
       'strip_prefix': 'dist/',
-      'source': 'dist/*.zip',
+      'source': 'dist/*',
       'target': '/minecraft/%s/%s' % (ctx.repo.name, ctx.build.ref.replace("refs/tags/v", "")),
     }
   else:
@@ -235,7 +235,7 @@ def client(ctx):
       },
       'path_style': True,
       'strip_prefix': 'dist/',
-      'source': 'dist/*.zip',
+      'source': 'dist/*',
       'target': '/minecraft/%s/testing' % (ctx.repo.name),
     }
 
