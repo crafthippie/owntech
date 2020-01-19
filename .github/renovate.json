@@ -1,0 +1,14 @@
+{
+    "extends": [
+      "docker:pinDigests",
+      "default:automergeDigest"
+    ],
+    "labels": [
+      "renovate"
+    ],
+    "packageRules": [{
+      "datasources": ["docker"],
+      "updateTypes": ["major", "minor", "patch"],
+      "enabled": false
+    }]
+  }
