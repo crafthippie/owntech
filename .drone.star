@@ -45,6 +45,7 @@ def docker(ctx, arch):
           'dry_run': True,
           'tags': arch,
           'repo': ctx.repo.slug,
+          'dockerfile': 'docker/Dockerfile.%s' % (arch),
         },
         'when': {
           'ref': {
@@ -68,6 +69,7 @@ def docker(ctx, arch):
           'auto_tag': True,
           'auto_tag_suffix': arch,
           'repo': ctx.repo.slug,
+          'dockerfile': 'docker/Dockerfile.%s' % (arch),
         },
         'when': {
           'ref': {
@@ -108,7 +110,7 @@ def manifest(ctx):
           'password': {
             'from_secret': 'docker_password',
           },
-          'spec': 'manifest.tmpl',
+          'spec': 'docker/manifest.tmpl',
           'auto_tag': True,
           'ignore_missing': True,
         },

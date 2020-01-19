@@ -1,4 +1,4 @@
-FROM webhippie/java:8
+FROM webhippie/java:8-arm64v8
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Minecraft ownTech" \
