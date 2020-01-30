@@ -1,4 +1,4 @@
-FROM webhippie/java:8-amd64@sha256:cc7e6c529d4a024839d1a39f4e721ea50a8d87a88d4904ce9153707c6fa5ce84
+FROM webhippie/java:8-amd64@sha256:c972ff793d2325a8dd4cd93c7b88d80d7685d84ace0f55e8f1a2e9f410bb859e
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Minecraft ownTech" \
