@@ -1,4 +1,4 @@
-FROM webhippie/minecraft-forge:14.23.5-amd64
+FROM webhippie/minecraft-forge:14.23.5-amd64@sha256:67f43503f1d50a65864d3608099753b393725c6d8af66cf7b9a71da33a85865f
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Minecraft ownTech" \
