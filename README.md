@@ -12,7 +12,7 @@ To see the available Docker image versions it's best to look at https://hub.dock
 ## Volumes
 
 * /var/lib/minecraft
-* /etc/override
+* /etc/minecraft/override
 
 ## Ports
 
@@ -23,16 +23,13 @@ To see the available Docker image versions it's best to look at https://hub.dock
 ## Available environment variables
 
 ```bash
-SERVER_MAXHEAP = 4096M
-SERVER_MINHEAP = 1024M
-SERVER_OPTS = nogui
-SERVER_MOTD = Minecraft
-SERVER_RCONPWD = minecraft
-JAVA_OPTS = -server -XX:+UseConcMarkSweepGC
+MINECRAFT_BACKUPS_DIR = ${MINECRAFT_DATA_DIR}/backups
 ```
 
 ## Inherited environment variables
 
+* [webhippie/minecraft-forge](https://github.com/dockhippie/minecraft-forge#available-environment-variables)
+* [webhippie/minecraft-vanilla](https://github.com/dockhippie/minecraft-vanilla#available-environment-variables)
 * [webhippie/java](https://github.com/dockhippie/java#available-environment-variables)
 * [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
 

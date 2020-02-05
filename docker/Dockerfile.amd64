@@ -1,4 +1,4 @@
-FROM webhippie/java:8-amd64@sha256:c972ff793d2325a8dd4cd93c7b88d80d7685d84ace0f55e8f1a2e9f410bb859e
+FROM webhippie/minecraft-forge:14.23.5-amd64
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Minecraft ownTech" \
@@ -6,20 +6,12 @@ LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.schema-version="1.0"
 
 EXPOSE 25565 25575 8123
-VOLUME ["/var/lib/minecraft", "/etc/override"]
+VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 
 WORKDIR /var/lib/minecraft
 ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
 
-ENV MINECRAFT_VERSION 1.12.2
-ENV FORGE_VERSION 14.23.5.2847
-
-RUN groupadd -g 1000 minecraft && \
-  useradd -u 1000 -d /var/lib/minecraft -g minecraft -s /bin/bash -M minecraft && \
-  curl --create-dirs -sLo /usr/share/minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar http://files.minecraftforge.net/maven/net/minecraftforge/forge/${MINECRAFT_VERSION}-${FORGE_VERSION}/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar && \
-  cd /usr/share/minecraft && \
-  java -jar forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar --installServer && \
-  rm -f forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar.log
+ENV MINECRAFT_LEVEL_TYPE BIOMESOP
 
 COPY ./overlay  /
