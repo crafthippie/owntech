@@ -301,29 +301,29 @@ def client(ctx):
           ],
         },
       },
-      # {
-      #   'name': 'curse',
-      #   'image': 'plugins/curseforge:latest',
-      #   'pull': 'always',
-      #   'settings': {
-      #     'api_key': {
-      #       'from_secret': 'curse_token',
-      #     },
-      #     'project': project,
-      #     'file': 'dist/%s-%s.zip' % (title, ctx.build.ref.replace("refs/tags/v", "")),
-      #     'title': '%s %s' % (title, ctx.build.ref.replace("refs/tags/", "")),
-      #     'note': 'dist/CHANGELOG.md',
-      #     'manifest': 'client/manifest.json',
-      #     'games': [
-      #       6756,
-      #     ],
-      #   },
-      #   'when': {
-      #     'ref': [
-      #       'refs/tags/**',
-      #     ],
-      #   },
-      # },
+      {
+        'name': 'curse',
+        'image': 'plugins/curseforge:latest',
+        'pull': 'always',
+        'settings': {
+          'api_key': {
+            'from_secret': 'curse_token',
+          },
+          'project': project,
+          'file': 'dist/%s-%s.zip' % (title, ctx.build.ref.replace("refs/tags/v", "")),
+          'title': '%s %s' % (title, ctx.build.ref.replace("refs/tags/", "")),
+          'note': 'dist/CHANGELOG.md',
+          'manifest': 'client/manifest.json',
+          'games': [
+            6756,
+          ],
+        },
+        'when': {
+          'ref': [
+            'refs/tags/**',
+          ],
+        },
+      },
       {
         'name': 'github',
         'image': 'plugins/github-release:latest',
