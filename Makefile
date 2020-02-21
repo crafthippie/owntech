@@ -1,6 +1,7 @@
 SHELL := bash
 NAME := ownTech
 DIST := dist
+CLIENT := client
 
 UNAME := $(shell uname -s)
 
@@ -45,8 +46,7 @@ docs:
 
 .PHONY: package
 package: $(DIST)
-	cp -rf client $(DIST)/$(NAME)-$(OUTPUT)
-	$(SED) -i 's/VERSION/$(VERSION)/' $(DIST)/$(NAME)-$(OUTPUT)/manifest.json
-	cd $(DIST) && zip -rm $(NAME)-$(OUTPUT).zip $(NAME)-$(OUTPUT) -x \*.DS_Store
+	$(SED) -i 's/VERSION/$(VERSION)/' $(CLIENT)/manifest.json
+	cd $(CLIENT) && zip -r ../$(DIST)/$(NAME)-$(OUTPUT).zip * -x \*.DS_Store
+	$(SED) -i 's/$(VERSION)/VERSION/' $(CLIENT)/manifest.json
 	cd $(DIST) && $(SHASUM) $(NAME)-$(OUTPUT).zip >| $(NAME)-$(OUTPUT).zip.sha256
-	rm -rf $(DIST)/$(NAME)-$(OUTPUT)
