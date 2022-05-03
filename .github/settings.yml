@@ -1,8 +1,9 @@
+---
 repository:
   name: owntech
   description: Minecraft mod pack ownTech
   homepage: https://crafthippie.github.io/owntech
-  topics: docker, image, container, minecraft, client, twitch
+  topics: docker, image, container, minecraft, client, client
 
   private: false
   has_issues: true
@@ -50,7 +51,16 @@ labels:
 branches:
   - name: master
     protection:
+      required_pull_request_reviews: null
       required_status_checks:
         strict: true
         contexts:
-          - continuous-integration/drone/pr
+          - docker
+      enforce_admins: false
+      restrictions:
+        apps:
+          - renovate
+        users: []
+        teams: []
+
+...

@@ -14,16 +14,16 @@ else
 endif
 
 ifndef OUTPUT
-	ifneq ($(DRONE_TAG),)
-		OUTPUT ?= $(subst v,,$(DRONE_TAG))
+	ifneq ($(GITHUB_REF_NAME),)
+		OUTPUT ?= $(subst v,,$(GITHUB_REF_NAME))
 	else
 		OUTPUT ?= testing
 	endif
 endif
 
 ifndef VERSION
-	ifneq ($(DRONE_TAG),)
-		VERSION ?= $(subst v,,$(DRONE_TAG))
+	ifneq ($(GITHUB_REF_NAME),)
+		VERSION ?= $(subst v,,$(GITHUB_REF_NAME))
 	else
 		VERSION ?= $(shell git rev-parse --short HEAD)
 	endif

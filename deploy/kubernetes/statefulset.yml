@@ -1,0 +1,74 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: minecraft-server
+  labels:
+    app.kubernetes.io/name: minecraft
+    app.kubernetes.io/component: server
+    app.kubernetes.io/instance: owntech
+
+spec:
+  replicas: 1
+  serviceName: minecraft-server
+  podManagementPolicy: Parallel
+
+  updateStrategy:
+    type: RollingUpdate
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: minecraft
+      app.kubernetes.io/component: server
+      app.kubernetes.io/instance: owntech
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: minecraft
+        app.kubernetes.io/component: server
+        app.kubernetes.io/instance: owntech
+
+    spec:
+      enableServiceLinks: false
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
+
+      containers:
+        - name: server
+          image: minecraft-server
+          imagePullPolicy: IfNotPresent
+
+          envFrom:
+            - configMapRef:
+               name: minecraft-server
+            - secretRef:
+               name: minecraft-server
+
+          ports:
+            - name: mapper
+              containerPort: 8123
+              protocol: TCP
+            - name: server
+              containerPort: 25565
+              protocol: TCP
+            - name: rcon
+              containerPort: 25575
+              protocol: TCP
+
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/minecraft
+
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi
+
+...

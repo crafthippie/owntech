@@ -1,37 +1,42 @@
 # ownTech
 
-[![Build Status](https://cloud.drone.io/api/badges/crafthippie/owntech/status.svg)](https://cloud.drone.io/crafthippie/owntech)
-[![](https://images.microbadger.com/badges/image/crafthippie/owntech.svg)](https://microbadger.com/images/crafthippie/owntech "Get your own image badge on microbadger.com")
+[![Docker Workflow](https://github.com/crafthippie/owntech/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/owntech/actions/workflows/docker.yml) [![Docker Size](https://img.shields.io/docker/image-size/crafthippie/owntech/latest)](https://hub.docker.com/r/crafthippie/owntech) [![Docker Pulls](https://img.shields.io/docker/pulls/crafthippie/owntech)](https://hub.docker.com/r/crafthippie/owntech) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/crafthippie/owntech)
 
-This repository provides the whole configuration for the `ownTech` Minecraft mod pack. It's used to automatically build and publish the required files for the Twitch desktop app through [Curseforge](https://www.curseforge.com/minecraft/modpacks/owntech), and to publish a Docker image for the server on [DockerHub](https://hub.docker.com/r/crafthippie/owntech). Some information and documentation about this pack can be found on https://crafthippie.github.io/owntech.
+This repository provides the whole configuration for the `ownTech` Minecraft
+mod pack. It's used to automatically build and publish the required files for
+the [Curseforge Client][curse], and to publish a Docker image for the server on
+[DockerHub][dockerhub]. Some information and documentation about this pack can
+be found on https://crafthippie.github.io/owntech.
 
 ## Versions
 
-To see the available Docker image versions it's best to look at https://hub.docker.com/r/crafthippie/owntech/tags while you can see the available files for the client at https://www.curseforge.com/minecraft/modpacks/owntech/files and https://dl.webhippie.de/minecraft/owntech.
+To see the available Docker image versions it's best to look at
+https://hub.docker.com/r/crafthippie/owntech/tags while you can see the
+available files for the client at https://dl.webhippie.de/minecraft/owntech.
 
 ## Volumes
 
-* /var/lib/minecraft
-* /etc/minecraft/override
+-   /var/lib/minecraft
+-   /etc/minecraft/override
 
 ## Ports
 
-* 25565
-* 25575
-* 8123
+-   25565
+-   25575
+-   8123
 
 ## Available environment variables
 
-```bash
+```console
 MINECRAFT_BACKUPS_DIR = ${MINECRAFT_DATA_DIR}/backups
 ```
 
 ## Inherited environment variables
 
-* [webhippie/minecraft-forge](https://github.com/dockhippie/minecraft-forge#available-environment-variables)
-* [webhippie/minecraft-vanilla](https://github.com/dockhippie/minecraft-vanilla#available-environment-variables)
-* [webhippie/java](https://github.com/dockhippie/java#available-environment-variables)
-* [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
+-   [webhippie/minecraft-forge](https://github.com/dockhippie/minecraft-forge#available-environment-variables)
+-   [webhippie/minecraft-vanilla](https://github.com/dockhippie/minecraft-vanilla#available-environment-variables)
+-   [webhippie/adoptopenjdk](https://github.com/dockhippie/adoptopenjdk#available-environment-variables)
+-   [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
 
 ## Contributing
 
@@ -39,7 +44,7 @@ Fork -> Patch -> Push -> Pull Request
 
 ## Authors
 
-* [Thomas Boerger](https://github.com/tboerger)
+-   [Thomas Boerger](https://github.com/tboerger)
 
 ## License
 
@@ -47,6 +52,9 @@ MIT
 
 ## Copyright
 
-```
+```console
 Copyright (c) 2020 Thomas Boerger <http://www.webhippie.de>
 ```
+
+[curse]: https://download.curseforge.com/
+[dockerhub]: https://hub.docker.com/r/crafthippie/owntech
