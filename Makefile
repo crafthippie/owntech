@@ -14,7 +14,7 @@ else
 endif
 
 ifndef OUTPUT
-	ifneq ($(GITHUB_REF_NAME),)
+	ifeq ($(GITHUB_REF_TYPE),tag)
 		OUTPUT ?= $(subst v,,$(GITHUB_REF_NAME))
 	else
 		OUTPUT ?= testing
@@ -22,7 +22,7 @@ ifndef OUTPUT
 endif
 
 ifndef VERSION
-	ifneq ($(GITHUB_REF_NAME),)
+	ifeq ($(GITHUB_REF_TYPE),tag)
 		VERSION ?= $(subst v,,$(GITHUB_REF_NAME))
 	else
 		VERSION ?= $(shell git rev-parse --short HEAD)
@@ -45,8 +45,12 @@ docs:
 	cd docs; hugo
 
 .PHONY: package
-package: $(DIST)
+package: $(DIST)/$(NAME)-$(OUTPUT).zip $(DIST)/$(NAME)-$(OUTPUT).zip.sha256
+
+$(DIST)/$(NAME)-$(OUTPUT).zip: $(DIST)
 	$(SED) -i 's/VERSION/$(VERSION)/' $(CLIENT)/manifest.json
 	cd $(CLIENT) && zip -r ../$(DIST)/$(NAME)-$(OUTPUT).zip * -x \*.DS_Store
 	$(SED) -i 's/$(VERSION)/VERSION/' $(CLIENT)/manifest.json
+
+$(DIST)/$(NAME)-$(OUTPUT).zip.sha256: $(DIST)
 	cd $(DIST) && $(SHASUM) $(NAME)-$(OUTPUT).zip >| $(NAME)-$(OUTPUT).zip.sha256
