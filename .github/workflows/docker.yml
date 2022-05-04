@@ -7,6 +7,9 @@ name: docker
       - master
     tags:
       - v*
+  pull_request:
+    branches:
+      - master
 
 jobs:
   download:
@@ -144,6 +147,7 @@ jobs:
 
       - name: Hub manifest
         id: hub
+        if: github.event_name != 'pull_request'
         uses: actionhippie/manifest@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -167,6 +171,7 @@ jobs:
 
       - name: Quay manifest
         id: quay
+        if: github.event_name != 'pull_request'
         uses: actionhippie/manifest@v1
         with:
           username: ${{ secrets.QUAY_USERNAME }}
@@ -186,6 +191,7 @@ jobs:
 
       - name: Hub readme
         id: hub
+        if: github.event_name != 'pull_request'
         uses: actionhippie/pushrm@v1
         with:
           provider: dockerhub
@@ -197,6 +203,7 @@ jobs:
 
       - name: Quay readme
         id: quay
+        if: github.event_name != 'pull_request'
         uses: actionhippie/pushrm@v1
         with:
           provider: quay
