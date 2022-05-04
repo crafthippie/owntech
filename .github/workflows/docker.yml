@@ -9,8 +9,32 @@ name: docker
       - v*
 
 jobs:
+  download:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout source
+        id: source
+        uses: actions/checkout@v3
+
+      - name: Cache mods
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: overlay/usr/share/minecraft/mods/
+          key: mods-${{ hashFiles('client/manifest.json') }}
+
+      - name: Download mods
+        id: mods
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: docker://webhippie/cursecli:1.0.0
+        run: |
+          cursecli manifest --manifest client/manifest.json \
+            download mods --path overlay/usr/share/minecraft/mods/
+
   docker:
     runs-on: ubuntu-20.04
+    needs: download
 
     strategy:
       matrix:
@@ -25,6 +49,20 @@ jobs:
         id: source
         uses: actions/checkout@v3
 
+      - name: Cache mods
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: overlay/usr/share/minecraft/mods/
+          key: mods-${{ hashFiles('client/manifest.json') }}
+
+      - name: Download mods
+        id: mods
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: docker://webhippie/cursecli:1.0.0
+        run: |
+          cursecli manifest --manifest client/manifest.json \
+            download mods --path overlay/usr/share/minecraft/mods/
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v3

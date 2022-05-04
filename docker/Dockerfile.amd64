@@ -7,12 +7,9 @@ ENV MINECRAFT_LEVEL_TYPE BIOMESOP
 
 RUN apk update && \
   apk upgrade && \
-  apk add --no-cache jq && \
   rm -rf /var/cache/apk/*
 
 COPY ./overlay /
 COPY ./client/overrides /usr/share/minecraft
 COPY ./client/manifest.json /usr/share/minecraft
 COPY ./client/modlist.html /usr/share/minecraft
-
-RUN download-mods
