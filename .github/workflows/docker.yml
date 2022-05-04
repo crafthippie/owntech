@@ -28,9 +28,9 @@ jobs:
         id: mods
         if: steps.cache.outputs.cache-hit != 'true'
         uses: docker://webhippie/cursecli:1.0.0
-        run: |
-          cursecli manifest --manifest client/manifest.json \
-            download mods --path overlay/usr/share/minecraft/mods/
+        with:
+          entrypoint: cursecli
+          args: manifest --manifest client/manifest.json download mods --path overlay/usr/share/minecraft/mods/
 
   docker:
     runs-on: ubuntu-20.04
@@ -60,9 +60,10 @@ jobs:
         id: mods
         if: steps.cache.outputs.cache-hit != 'true'
         uses: docker://webhippie/cursecli:1.0.0
-        run: |
-          cursecli manifest --manifest client/manifest.json \
-            download mods --path overlay/usr/share/minecraft/mods/
+        with:
+          entrypoint: cursecli
+          args: manifest --manifest client/manifest.json download mods --path overlay/usr/share/minecraft/mods/
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
