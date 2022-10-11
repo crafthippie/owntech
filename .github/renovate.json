@@ -5,6 +5,12 @@
         "docker:pinDigests",
         "default:automergeDigest"
     ],
+    "docker": {
+        "digest": {
+            "groupName": "Docker digests",
+            "automerge": true
+        }
+    },
     "packageRules": [{
         "datasources": [
             "docker"
