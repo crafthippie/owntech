@@ -30,7 +30,7 @@ jobs:
       - name: Download mods
         id: mods
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: docker://ghcr.io/webhippie/cursecli:1.1.1
+        uses: docker://quay.io/webhippie/cursecli:1.1.1
         env:
           CURSECLI_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
         with:
@@ -64,7 +64,7 @@ jobs:
       - name: Download mods
         id: mods
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: docker://ghcr.io/webhippie/cursecli:1.1.1
+        uses: docker://quay.io/webhippie/cursecli:1.1.1
         env:
           CURSECLI_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
         with:
