@@ -20,5 +20,8 @@
             "minor"
         ],
         "enabled": false
-    }]
+    }],
+    "ignoreDeps": [
+        "docker/build-push-action"
+    ]
 }

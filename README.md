@@ -1,6 +1,6 @@
 # ownTech
 
-[![Docker Workflow](https://github.com/crafthippie/owntech/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/owntech/actions/workflows/docker.yml) [![Docker Size](https://img.shields.io/docker/image-size/crafthippie/owntech/latest)](https://hub.docker.com/r/crafthippie/owntech) [![Docker Pulls](https://img.shields.io/docker/pulls/crafthippie/owntech)](https://hub.docker.com/r/crafthippie/owntech) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/crafthippie/owntech)
+[![Docker Workflow](https://github.com/crafthippie/owntech/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/owntech/actions/workflows/docker.yml) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/crafthippie/owntech)
 
 This repository provides the whole configuration for the `ownTech` Minecraft
 mod pack. It's used to automatically build and publish the required files for
@@ -36,7 +36,7 @@ MINECRAFT_BACKUPS_DIR = ${MINECRAFT_DATA_DIR}/backups
 -   [webhippie/minecraft-forge](https://github.com/dockhippie/minecraft-forge#available-environment-variables)
 -   [webhippie/minecraft-vanilla](https://github.com/dockhippie/minecraft-vanilla#available-environment-variables)
 -   [webhippie/adoptopenjdk](https://github.com/dockhippie/adoptopenjdk#available-environment-variables)
--   [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
+-   [webhippie/ubuntu](https://github.com/dockhippie/ubuntu#available-environment-variables)
 
 ## Contributing
 

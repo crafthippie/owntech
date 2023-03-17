@@ -8,12 +8,14 @@ name: changes
 
 jobs:
   changelog:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout source
         id: source
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
       - name: Build changelog
         uses: actionhippie/calens@v1
@@ -24,8 +26,8 @@ jobs:
         id: commit
         uses: EndBug/add-and-commit@v9
         with:
-          author_name: Crafthippie
-          author_email: crafthippie@webhippie.de
+          author_name: GitHub Actions
+          author_email: github@webhippie.de
           add: CHANGELOG.md
           message: "docs: automated changelog update"
           push: true
