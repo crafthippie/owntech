@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/minecraft-vanilla:1.12.2-amd64@sha256:386a98f625f98077d20a6a9344545ea8fac3570693083f217767031ce42268fa
+FROM ghcr.io/dockhippie/minecraft-vanilla:1.12.2-amd64@sha256:dcd74effbf450b395bffcb146a3d7cd5e57a5b9012939238aa9e8a2a219c3a0c
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575 8123
