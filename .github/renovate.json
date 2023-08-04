@@ -1,27 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "github>webhippie/renovate:docker",
-        "docker:pinDigests",
-        "default:automergeDigest"
+        "github>crafthippie/.github//renovate/preset"
     ],
-    "docker": {
-        "digest": {
-            "groupName": "Docker digests",
-            "automerge": true
-        }
-    },
-    "packageRules": [{
-        "datasources": [
-            "docker"
-        ],
-        "updateTypes": [
-            "major",
-            "minor"
-        ],
-        "enabled": false
-    }],
-    "ignoreDeps": [
-        "docker/build-push-action"
-    ]
+    "packageRules": []
 }
