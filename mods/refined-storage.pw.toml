@@ -1,0 +1,13 @@
+name = "Refined Storage"
+filename = "refinedstorage-1.6.15.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7629f6d99319c58217d36723f92f5e0102f9442c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2745458
+project-id = 243076

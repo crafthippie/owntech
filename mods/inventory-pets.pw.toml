@@ -1,0 +1,13 @@
+name = "Inventory Pets"
+filename = "inventorypets-1.12-2.0.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2a8ca71702910b933f46d497b37373d19410105e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2765338
+project-id = 229380

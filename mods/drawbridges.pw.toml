@@ -1,0 +1,13 @@
+name = "Drawbridges"
+filename = "drawbridges-1.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7a2700266bf7765f0e591dab0fbcf16169225822"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2689438
+project-id = 297212

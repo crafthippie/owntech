@@ -1,0 +1,13 @@
+name = "Ender IO Endergy"
+filename = "EnderIO-endergy-1.12.2-5.1.55.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9e2b48abfa3bfd1290fe5b5ae059ff19c0821c6e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2858815
+project-id = 304346

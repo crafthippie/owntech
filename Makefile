@@ -1,9 +1,11 @@
 SHELL := bash
-NAME := ownTech
+NAME := owntech
 DIST := dist
-CLIENT := client
 
 UNAME := $(shell uname -s)
+
+BOOTSTRAP_VERSION := 0.0.3
+BOOTSTRAP_URL := https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/v$(BOOTSTRAP_VERSION)/packwiz-installer-bootstrap.jar
 
 ifeq ($(UNAME), Darwin)
 	SED ?= gsed
@@ -36,21 +38,31 @@ $(DIST):
 clean:
 	rm -rf $(DIST)
 
-.PHONY: changelog
-changelog:
-	calens >| CHANGELOG.md
-
 .PHONY: docs
 docs:
 	cd docs; hugo
 
-.PHONY: package
-package: $(DIST)/$(NAME)-$(OUTPUT).zip $(DIST)/$(NAME)-$(OUTPUT).zip.sha256
+.PHONY: build
+build: $(DIST)/$(NAME)-$(OUTPUT).zip $(DIST)/$(NAME)-$(OUTPUT).zip.sha256
 
 $(DIST)/$(NAME)-$(OUTPUT).zip: $(DIST)
-	$(SED) -i 's/VERSION/$(VERSION)/' $(CLIENT)/manifest.json
-	cd $(CLIENT) && zip -r ../$(DIST)/$(NAME)-$(OUTPUT).zip * -x \*.DS_Store
-	$(SED) -i 's/$(VERSION)/VERSION/' $(CLIENT)/manifest.json
+	$(SED) -i 's|version = ".*"|version = "$(VERSION)"|' pack.toml
+	cd $(DIST) && packwiz curseforge export --meta-folder-base $(CURDIR)/ --pack-file $(CURDIR)/pack.toml --yes
+	git checkout $(CURDIR)/pack.toml
+ifeq ($(OUTPUT), testing)
+	mv $(DIST)/$(NAME)-$(VERSION).zip $(DIST)/$(NAME)-$(OUTPUT).zip
+endif
 
 $(DIST)/$(NAME)-$(OUTPUT).zip.sha256: $(DIST)
 	cd $(DIST) && $(SHASUM) $(NAME)-$(OUTPUT).zip >| $(NAME)-$(OUTPUT).zip.sha256
+
+.PHONY: client
+client: packwiz-installer-bootstrap.jar
+	java -jar packwiz-installer-bootstrap.jar --no-gui pack.toml --side client
+
+.PHONY: server
+server: packwiz-installer-bootstrap.jar
+	java -jar packwiz-installer-bootstrap.jar --no-gui pack.toml --side server
+
+packwiz-installer-bootstrap.jar:
+	curl -sSLo packwiz-installer-bootstrap.jar $(BOOTSTRAP_URL)

@@ -1,0 +1,13 @@
+name = "Midnight Rifting Machine"
+filename = "Rifting.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "71ab04c36200e04ee5795f856425926653ee4910"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2796315
+project-id = 344395

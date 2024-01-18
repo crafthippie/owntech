@@ -1,0 +1,13 @@
+name = "MoreRefinedStorage"
+filename = "morerefinedstorage-2.3.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/IfAp7fJk/versions/v2.3.2/morerefinedstorage-2.3.2.jar"
+hash-format = "sha1"
+hash = "54ebad5c39e6d0caa47c9105472b69cdbf4b883a"
+
+[update]
+[update.modrinth]
+mod-id = "IfAp7fJk"
+version = "IFNcLDps"

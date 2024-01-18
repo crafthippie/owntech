@@ -1,0 +1,13 @@
+name = "Reconstructor"
+filename = "reconstructor-2.16.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8460949c7a11da79b4c798407f06d880ba72d529"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2687388
+project-id = 77420

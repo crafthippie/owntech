@@ -1,0 +1,13 @@
+name = "Obfuscate"
+filename = "obfuscate-0.2.6-1.12.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "22e71cce14c94b0e44c25f0e02b57d5a000aad3e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2625165
+project-id = 289380

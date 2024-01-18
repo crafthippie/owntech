@@ -1,0 +1,13 @@
+name = "owntech"
+author = "Thomas Boerger"
+version = "9190b48"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "a4cc73b2701de1d8c1de4998cef4b4f96abb72fec23e7e472ed28bc698c86917"
+
+[versions]
+forge = "14.23.5.2847"
+minecraft = "1.12.2"

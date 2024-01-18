@@ -1,0 +1,13 @@
+name = "Chunkloader"
+filename = "MyChunkloader-1.12.2-01.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9b8a33e16473c8f697a4f31ce85fa4fde68db410"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2676878
+project-id = 76458

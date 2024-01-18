@@ -3,7 +3,7 @@ repository:
   name: owntech
   description: Minecraft mod pack ownTech
   homepage: https://crafthippie.github.io/owntech
-  topics: docker, image, container, minecraft, client, client
+  topics: docker, image, container, minecraft, server, client
 
   private: false
   has_issues: true

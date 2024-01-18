@@ -1,0 +1,13 @@
+name = "PlusTiC - Rejected"
+filename = "plustic-7.1.6.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0b411cca11b63f7e82f2cff22bc001340c814d26"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2789626
+project-id = 260327

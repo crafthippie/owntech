@@ -1,0 +1,13 @@
+name = "Tinkers' Addons"
+filename = "Tinkers' Addons-1.12.1-1.0.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a47604126f4eb8642f7d572fead28cfc008e602d"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2476626
+project-id = 245549

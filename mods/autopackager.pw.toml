@@ -1,0 +1,13 @@
+name = "AutoPackager"
+filename = "autopackager-1.12.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e9674011c26d79cf0a0d0f7fa85e85ae37ddcbbf"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2633675
+project-id = 221457

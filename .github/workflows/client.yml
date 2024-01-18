@@ -7,6 +7,7 @@ name: client
       - master
     tags:
       - v*
+  workflow_dispatch:
 
 jobs:
   client:
@@ -15,7 +16,7 @@ jobs:
     steps:
       - name: Checkout source
         id: source
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
 
       - name: Configure aws
         id: aws
@@ -25,9 +26,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
 
-      - name: Run package
+      - name: Install packwiz
+        id: packwiz
+        uses: actionhippie/install-packwiz@v1
+
+      - name: Build package
         id: package
-        run: make package
+        run: make build
 
       - name: Sign package
         id: gpgsign
@@ -37,14 +42,7 @@ jobs:
           passphrase: ${{ secrets.GNUPG_PASSWORD }}
           detach_sign: true
           files: |
-            dist/*.zip
-
-      - name: Build changes
-        id: changelog
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: actionhippie/calens@v1
-        with:
-          version: ${{ github.ref }}
+            dist/*.mrpack
 
       - name: Upload release
         id: upload
@@ -52,7 +50,8 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          body: ${{ steps.changelog.outputs.generated }}
+          allowUpdates: true
+          omitBody: true
           artifacts: dist/*
 
       - name: Upload version
