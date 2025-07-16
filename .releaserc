@@ -105,6 +105,7 @@
             {
                 "message": "chore: release ${nextRelease.version}",
                 "assets": [
+                    ".github/RELEASE",
                     "CHANGELOG.md",
                     "deploy/kubernetes/kustomization.yml",
                     "pack.toml"
