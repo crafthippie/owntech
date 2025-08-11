@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Checkout source
         id: source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install java
         id: java
@@ -116,7 +116,7 @@ jobs:
     steps:
       - name: Checkout source
         id: source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Hub tags
         id: hubTags
@@ -196,7 +196,7 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Hub readme
         id: hub
