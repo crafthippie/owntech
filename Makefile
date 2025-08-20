@@ -8,10 +8,8 @@ BOOTSTRAP_VERSION := 0.0.3
 BOOTSTRAP_URL := https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/v$(BOOTSTRAP_VERSION)/packwiz-installer-bootstrap.jar
 
 ifeq ($(UNAME), Darwin)
-	SED ?= gsed
 	SHASUM ?= shasum -a 256
 else
-	SED ?= sed
 	SHASUM ?= sha256sum
 endif
 
@@ -43,10 +41,10 @@ docs:
 	cd docs; hugo
 
 .PHONY: build
-build: $(DIST)/$(NAME)-$(OUTPUT).zip $(DIST)/$(NAME)-$(OUTPUT).zip.sha256
+build: $(DIST)/$(NAME)-$(OUTPUT).zip $(DIST)/$(NAME)-$(OUTPUT).zip.sha256 $(DIST)/$(NAME)-$(OUTPUT).mrpack $(DIST)/$(NAME)-$(OUTPUT).mrpack.sha256
 
 $(DIST)/$(NAME)-$(OUTPUT).zip: $(DIST)
-	$(SED) -i 's|version = ".*"|version = "$(VERSION)"|' pack.toml
+	sed -i 's|version = ".*"|version = "$(VERSION)"|' pack.toml
 	cd $(DIST) && packwiz curseforge export --meta-folder-base $(CURDIR)/ --pack-file $(CURDIR)/pack.toml --yes
 	git checkout $(CURDIR)/pack.toml
 ifeq ($(OUTPUT), testing)
@@ -55,6 +53,17 @@ endif
 
 $(DIST)/$(NAME)-$(OUTPUT).zip.sha256: $(DIST)
 	cd $(DIST) && $(SHASUM) $(NAME)-$(OUTPUT).zip >| $(NAME)-$(OUTPUT).zip.sha256
+
+$(DIST)/$(NAME)-$(OUTPUT).mrpack: $(DIST)
+	sed -i 's|version = ".*"|version = "$(VERSION)"|' pack.toml
+	cd $(DIST) && packwiz modrinth export --meta-folder-base $(CURDIR)/ --pack-file $(CURDIR)/pack.toml --yes
+	git checkout $(CURDIR)/pack.toml
+ifeq ($(OUTPUT), testing)
+	mv $(DIST)/$(NAME)-$(VERSION).mrpack $(DIST)/$(NAME)-$(OUTPUT).mrpack
+endif
+
+$(DIST)/$(NAME)-$(OUTPUT).mrpack.sha256: $(DIST)
+	cd $(DIST) && $(SHASUM) $(NAME)-$(OUTPUT).mrpack >| $(NAME)-$(OUTPUT).mrpack.sha256
 
 .PHONY: client
 client: packwiz-installer-bootstrap.jar

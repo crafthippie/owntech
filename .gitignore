@@ -1,5 +1,13 @@
+.direnv/
+.devenv/
+
 dist/
 docs/public/
 
 *.jar
 resourcepacks/*.zip
+
+docs/.hugo_build.lock
+.pre-commit-config.yaml
+
+packwiz.json

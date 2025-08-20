@@ -4,9 +4,9 @@
 
 This repository provides the whole configuration for the `ownTech` Minecraft
 mod pack. It's used to automatically build and publish the required files for
-the [Curseforge Client][curse], and to publish a Docker image for the server on
-[DockerHub][dockerhub]. Some information and documentation about this pack can
-be found on https://crafthippie.github.io/owntech.
+[Modrinth][modrinth] and the [Curseforge Client][curse], and to publish a Docker
+image for the server on [DockerHub][dockerhub]. Some information and
+documentation about this pack can be found on https://crafthippie.github.io/owntech.
 
 ## Versions
 
@@ -33,9 +33,8 @@ MINECRAFT_BACKUPS_DIR = ${MINECRAFT_DATA_DIR}/backups
 
 ## Inherited environment variables
 
--   [webhippie/minecraft-forge](https://github.com/dockhippie/minecraft-forge#available-environment-variables)
 -   [webhippie/minecraft-vanilla](https://github.com/dockhippie/minecraft-vanilla#available-environment-variables)
--   [webhippie/adoptopenjdk](https://github.com/dockhippie/adoptopenjdk#available-environment-variables)
+-   [webhippie/temurin](https://github.com/dockhippie/adoptopenjdk#available-environment-variables)
 -   [webhippie/ubuntu](https://github.com/dockhippie/ubuntu#available-environment-variables)
 
 ## Contributing
@@ -56,5 +55,6 @@ MIT
 Copyright (c) 2020 Thomas Boerger <http://www.webhippie.de>
 ```
 
+[modrinth]: https://modrinth.com/
 [curse]: https://download.curseforge.com/
 [dockerhub]: https://hub.docker.com/r/crafthippie/owntech
