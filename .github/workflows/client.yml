@@ -11,7 +11,7 @@ name: client
       - v*
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   client:
