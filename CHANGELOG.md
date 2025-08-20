@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/crafthippie/owntech/compare/v2.0.0...v3.0.0) (2025-08-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* restructure build process
+
+### Features
+
+* restructure build process ([a72ca00](https://github.com/crafthippie/owntech/commit/a72ca00f79b2d3fe8729719299491f0e433dc4fc))
+
 ## [2.0.0](https://github.com/crafthippie/owntech/compare/v1.1.0...v2.0.0) (2024-07-29)
 
 
