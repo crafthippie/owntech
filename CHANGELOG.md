@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/crafthippie/owntech/compare/v3.0.0...v3.0.1) (2025-08-20)
+
+
+### Bugfixes
+
+* resolve client deployment ([f4f9be0](https://github.com/crafthippie/owntech/commit/f4f9be0a95b26b2823ee45c4c43defed6e86f9d9))
+
 ## [3.0.0](https://github.com/crafthippie/owntech/compare/v2.0.0...v3.0.0) (2025-08-20)
 
 
