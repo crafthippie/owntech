@@ -1,6 +1,6 @@
 name = "owntech"
 author = "Thomas Boerger"
-version = "3.0.1"
+version = "3.0.2"
 pack-format = "packwiz:1.1.0"
 
 [index]
