@@ -26,6 +26,6 @@ secretGenerator:
 images:
   - name: minecraft-server
     newName: quay.io/crafthippie/owntech
-    newTag: 3.0.3
+    newTag: 3.0.3@sha256:056be5c97b5bbeb68c7e46fad11ff637075617a6e97589893ffa94211af1acc4
 
 ...
