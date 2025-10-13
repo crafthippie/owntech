@@ -35,7 +35,7 @@ jobs:
         run: make build
 
       - name: Sign package
-        uses: actionhippie/gpgsign@236a80ffa17064ff25f66e15dde1742bb41d4f80 # v1
+        uses: actionhippie/gpgsign@5440387d74dedc9cb0a3787d455062317f32e0d7 # v1
         with:
           private_key: ${{ secrets.GNUPG_KEY }}
           passphrase: ${{ secrets.GNUPG_PASSWORD }}
