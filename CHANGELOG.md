@@ -1,5 +1,7 @@
 # Changelog
 
+## [3.0.5](https://github.com/crafthippie/owntech/compare/v3.0.4...v3.0.5) (2025-10-20)
+
 ## [3.0.4](https://github.com/crafthippie/owntech/compare/v3.0.3...v3.0.4) (2025-10-13)
 
 ## [3.0.3](https://github.com/crafthippie/owntech/compare/v3.0.2...v3.0.3) (2025-10-06)
