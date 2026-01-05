@@ -53,10 +53,6 @@
                 "presetConfig": {
                     "types": [
                         {
-                            "type": "feat",
-                            "section": "Features"
-                        },
-                        {
                             "type": "major",
                             "section": "Features"
                         },
@@ -65,16 +61,25 @@
                             "section": "Features"
                         },
                         {
-                            "type": "fix",
-                            "section": "Bugfixes"
-                        },
-                        {
                             "type": "patch",
                             "section": "Bugfixes"
                         },
                         {
+                            "type": "feat",
+                            "section": "Features"
+                        },
+                        {
+                            "type": "fix",
+                            "section": "Bugfixes"
+                        },
+                        {
+                            "type": "deps",
+                            "section": "Dependencies"
+                        },
+                        {
                             "type": "chore",
-                            "hidden": true
+                            "section": "Miscellaneous",
+                            "hidden": false
                         },
                         {
                             "type": "docs",
@@ -95,9 +100,42 @@
             }
         ],
         [
-            "@semantic-release/exec",
+            "semantic-release-replace-plugin",
             {
-                "prepareCmd": "./.github/scripts/bump-version ${nextRelease.version}"
+                "replacements": [
+                    {
+                        "files": [
+                            "deploy/kubernetes/kustomization.yml"
+                        ],
+                        "from": "newTag: .*",
+                        "to": "newTag: ${nextRelease.version}",
+                        "results": [
+                            {
+                                "file": "deploy/kubernetes/kustomization.yml",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    },
+                    {
+                        "files": [
+                            "pack.toml"
+                        ],
+                        "from": "version = \".*\"",
+                        "to": "version = \"${nextRelease.version}\"",
+                        "results": [
+                            {
+                                "file": "pack.toml",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    }
+                ]
             }
         ],
         [
@@ -115,7 +153,7 @@
         [
             "@semantic-release/github",
             {
-                "publish": true
+                "assets": []
             }
         ]
     ]
