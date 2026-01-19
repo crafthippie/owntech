@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Generate token
         id: token
-        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2
+        uses: actions/create-github-app-token@v2
         with:
           app-id: ${{ secrets.TOKEN_EXCHANGE_APP }}
           private-key: ${{ secrets.TOKEN_EXCHANGE_KEY }}
@@ -27,10 +27,10 @@ jobs:
           permission-issues: write
 
       - name: Checkout source
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        uses: actions/checkout@v6
 
       - name: Setup hugo
-        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: latest
           extended: true
@@ -39,7 +39,7 @@ jobs:
         run: hugo -s docs/
 
       - name: Deploy pages
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ steps.token.outputs.token }}
           publish_dir: docs/public/
