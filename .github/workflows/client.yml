@@ -36,7 +36,7 @@ jobs:
           aws-region: eu-central-1
 
       - name: Build package
-        run: make build
+        run: task build
 
       - name: Sign package
         uses: actionhippie/gpgsign@v1
