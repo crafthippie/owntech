@@ -1891,7 +1891,3 @@ metafile = true
 file = "resourcepacks/ctp.pw.toml"
 hash = "c2d0b14715595aad314e9b6c5958b8042198607264dcf59acba423118a472bf8"
 metafile = true
-
-[[files]]
-file = "resourcepacks/ctp_1.2_MCv3.zip"
-hash = "64a3c8d8c8dc02a954f0cf1cd17a695781c286426d8adfb2f13fda7575846ff5"
