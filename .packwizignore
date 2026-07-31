@@ -9,6 +9,7 @@ resourcepacks/*.zip
 
 packwiz.json
 Taskfile.yml
+Dockerfile
 README.md
 CHANGELOG.md
 LICENSE

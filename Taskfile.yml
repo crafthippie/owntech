@@ -64,7 +64,7 @@ tasks:
         if [ "{{.OUTPUT}}" = "testing" ]; then
           mv dist/{{.NAME}}-{{.VERSION}}.zip dist/{{.NAME}}-{{.OUTPUT}}.zip
         fi
-      - cd dist && {{.SHASUM}} {{.NAME}}-{{.OUTPUT}}.zip >| {{.NAME}}-{{.OUTPUT}}.zip.sha256
+      - cd dist && {{.SHASUM}} {{.NAME}}-{{.OUTPUT}}.zip > {{.NAME}}-{{.OUTPUT}}.zip.sha256
 
   pack-modrinth:
     internal: true
@@ -78,7 +78,7 @@ tasks:
         if [ "{{.OUTPUT}}" = "testing" ]; then
           mv dist/{{.NAME}}-{{.VERSION}}.mrpack dist/{{.NAME}}-{{.OUTPUT}}.mrpack
         fi
-      - cd dist && {{.SHASUM}} {{.NAME}}-{{.OUTPUT}}.mrpack >| {{.NAME}}-{{.OUTPUT}}.mrpack.sha256
+      - cd dist && {{.SHASUM}} {{.NAME}}-{{.OUTPUT}}.mrpack > {{.NAME}}-{{.OUTPUT}}.mrpack.sha256
 
   bootstrap:
     internal: true
