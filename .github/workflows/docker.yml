@@ -13,6 +13,10 @@ name: docker
     branches:
       - master
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
   packages: write
@@ -25,14 +29,11 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v7
 
-      - name: Install java
-        uses: actions/setup-java@v5
-        with:
-          distribution: temurin
-          java-version: 21
+      - name: Install tools
+        uses: jdx/mise-action@v4
 
       - name: Download mods
-        run: make server
+        run: task server
 
       - name: Docker meta
         id: meta

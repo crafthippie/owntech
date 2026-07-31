@@ -10,6 +10,10 @@ name: client
     tags:
       - v*
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -21,15 +25,15 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v7
 
+      - name: Install tools
+        uses: jdx/mise-action@v4
+
       - name: Configure aws
         uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
-
-      - name: Install packwiz
-        uses: actionhippie/install-packwiz@v2
 
       - name: Build package
         run: make build

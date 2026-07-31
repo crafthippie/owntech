@@ -1,0 +1,104 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+version: "3.40"
+
+vars:
+  NAME: owntech
+
+  BOOTSTRAP_VERSION: 0.0.3
+  BOOTSTRAP_URL: https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/v{{.BOOTSTRAP_VERSION}}/packwiz-installer-bootstrap.jar
+
+  SHASUM: '{{if eq OS "darwin"}}shasum -a 256{{else}}sha256sum{{end}}'
+
+  OUTPUT:
+    sh: |
+      if [ -n "$OUTPUT" ]; then echo "$OUTPUT";
+      elif [ "$GITHUB_REF_TYPE" = "tag" ]; then echo "${GITHUB_REF_NAME#v}";
+      else echo "testing"; fi
+
+  VERSION:
+    sh: |
+      if [ -n "$VERSION" ]; then echo "$VERSION";
+      elif [ "$GITHUB_REF_TYPE" = "tag" ]; then echo "${GITHUB_REF_NAME#v}";
+      else git rev-parse --short HEAD; fi
+
+tasks:
+  default:
+    silent: true
+    cmds:
+      - task --list
+
+  dist-dir:
+    internal: true
+    cmds:
+      - mkdir -p dist
+    status:
+      - test -d dist
+
+  clean:
+    desc: Remove the dist directory
+    cmds:
+      - rm -rf dist
+
+  docs:
+    desc: Build the documentation with Hugo
+    dir: docs
+    cmds:
+      - hugo
+
+  build:
+    desc: Build the curseforge and modrinth packs
+    cmds:
+      - task: pack-curseforge
+      - task: pack-modrinth
+
+  pack-curseforge:
+    internal: true
+    deps:
+      - dist-dir
+    cmds:
+      - sed -i 's|version = ".*"|version = "{{.VERSION}}"|' pack.toml
+      - cd dist && packwiz curseforge export --meta-folder-base {{.ROOT_DIR}}/ --pack-file {{.ROOT_DIR}}/pack.toml --yes
+      - git checkout {{.ROOT_DIR}}/pack.toml
+      - |
+        if [ "{{.OUTPUT}}" = "testing" ]; then
+          mv dist/{{.NAME}}-{{.VERSION}}.zip dist/{{.NAME}}-{{.OUTPUT}}.zip
+        fi
+      - cd dist && {{.SHASUM}} {{.NAME}}-{{.OUTPUT}}.zip >| {{.NAME}}-{{.OUTPUT}}.zip.sha256
+
+  pack-modrinth:
+    internal: true
+    deps:
+      - dist-dir
+    cmds:
+      - sed -i 's|version = ".*"|version = "{{.VERSION}}"|' pack.toml
+      - cd dist && packwiz modrinth export --meta-folder-base {{.ROOT_DIR}}/ --pack-file {{.ROOT_DIR}}/pack.toml --yes
+      - git checkout {{.ROOT_DIR}}/pack.toml
+      - |
+        if [ "{{.OUTPUT}}" = "testing" ]; then
+          mv dist/{{.NAME}}-{{.VERSION}}.mrpack dist/{{.NAME}}-{{.OUTPUT}}.mrpack
+        fi
+      - cd dist && {{.SHASUM}} {{.NAME}}-{{.OUTPUT}}.mrpack >| {{.NAME}}-{{.OUTPUT}}.mrpack.sha256
+
+  bootstrap:
+    internal: true
+    status:
+      - test -f packwiz-installer-bootstrap.jar
+    cmds:
+      - curl -sSLo packwiz-installer-bootstrap.jar {{.BOOTSTRAP_URL}}
+
+  client:
+    desc: Install the modpack for the client side
+    deps:
+      - bootstrap
+    cmds:
+      - java -jar packwiz-installer-bootstrap.jar --no-gui pack.toml --side client
+
+  server:
+    desc: Install the modpack for the server side
+    deps:
+      - bootstrap
+    cmds:
+      - java -jar packwiz-installer-bootstrap.jar --no-gui pack.toml --side server
+
+...

@@ -8,21 +8,17 @@ dist/
 resourcepacks/*.zip
 
 packwiz.json
-Makefile
+Taskfile.yml
 README.md
 CHANGELOG.md
 LICENSE
 
-flake.nix
-flake.lock
-
+commitlint.config.js
+mise.toml
 .pre-commit-config.yaml
 
 .dockerignore
-.envrc
 .gitignore
 .releaserc
 
-.devenv
-.direnv
 .github

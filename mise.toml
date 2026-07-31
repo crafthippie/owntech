@@ -1,0 +1,10 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+
+[tools]
+hugo-extended = "0.164.0"
+java = "26.0.2"
+node = "24"
+pre-commit = "4.6.1"
+task = "3.44.1"
+
+"go:github.com/packwiz/packwiz" = "0.0.0-20260218225342-dfd8b68a4796"
