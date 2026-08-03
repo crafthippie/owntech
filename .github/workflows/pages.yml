@@ -42,7 +42,7 @@ jobs:
         uses: jdx/mise-action@v4
 
       - name: Build pages
-        run: hugo -s docs/
+        run: hugo --cleanDestinationDir --enableGitInfo --minify --gc -s docs/
 
       - name: Deploy pages
         uses: peaceiris/actions-gh-pages@v4
