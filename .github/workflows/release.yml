@@ -31,6 +31,8 @@ jobs:
           client-id: ${{ secrets.TOKEN_EXCHANGE_APP }}
           private-key: ${{ secrets.TOKEN_EXCHANGE_KEY }}
           permission-contents: write
+          permission-pull-requests: write
+          permission-issues: write
 
       - name: Checkout source
         uses: actions/checkout@v7
