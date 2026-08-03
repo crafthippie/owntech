@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.1.0](https://github.com/crafthippie/owntech/compare/v3.0.5...v3.1.0) (2026-08-03)
+
+### Features
+
+* restructure repo and build processes ([60e9c79](https://github.com/crafthippie/owntech/commit/60e9c79a05fad56e023f0cea6b722a6775a05c27))
+
+### Bugfixes
+
+* make does not exist anymore ([e82b7a0](https://github.com/crafthippie/owntech/commit/e82b7a009882d0cfde13d8b1bb63c32779f874b8))
+* refreshed packwiz content ([97d0a82](https://github.com/crafthippie/owntech/commit/97d0a82abc1f2a13ad0c21e95f8ead691767bd5e))
+* resolve build script and ignore dockerfile ([8dd65c9](https://github.com/crafthippie/owntech/commit/8dd65c9626a697cb7c22e8d4d2a7c3985859aa89))
+
+### Dependencies
+
+* **minor:** update dependency task to v3.52.0 ([#125](https://github.com/crafthippie/owntech/issues/125)) ([78189f5](https://github.com/crafthippie/owntech/commit/78189f5090140e0648126e0f83f43d351d43c8d2))
+
 ## [3.0.5](https://github.com/crafthippie/owntech/compare/v3.0.4...v3.0.5) (2025-10-20)
 
 ## [3.0.4](https://github.com/crafthippie/owntech/compare/v3.0.3...v3.0.4) (2025-10-13)
