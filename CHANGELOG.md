@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.1](https://github.com/crafthippie/owntech/compare/v3.1.0...v3.1.1) (2026-08-10)
+
+### Dependencies
+
+* **patch:** pin quay.io/crafthippie/owntech docker tag to f1d8e1c ([#126](https://github.com/crafthippie/owntech/issues/126)) ([9717798](https://github.com/crafthippie/owntech/commit/9717798a3eb230e7aeb5b4175b176727f15fc6f8))
+
 ## [3.1.0](https://github.com/crafthippie/owntech/compare/v3.0.5...v3.1.0) (2026-08-03)
 
 ### Features
