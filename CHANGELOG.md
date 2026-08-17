@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.2.0](https://github.com/crafthippie/owntech/compare/v3.1.1...v3.2.0) (2026-08-17)
+
+### Dependencies
+
+* **minor:** update dependency hugo-extended to v0.165.0 ([#130](https://github.com/crafthippie/owntech/issues/130)) ([c3545e4](https://github.com/crafthippie/owntech/commit/c3545e472cbb5483ffb8598f1d089af2e812251d))
+* **patch:** pin quay.io/crafthippie/owntech docker tag to 6aaa582 ([#128](https://github.com/crafthippie/owntech/issues/128)) ([db61f59](https://github.com/crafthippie/owntech/commit/db61f59ca1323b82f27c20802c7015447808f1fc))
+* **patch:** update dependency pre-commit to v4.6.2 ([#129](https://github.com/crafthippie/owntech/issues/129)) ([ccc19b0](https://github.com/crafthippie/owntech/commit/ccc19b0ec647ddda399f359f35edce13fb15ef73))
+
 ## [3.1.1](https://github.com/crafthippie/owntech/compare/v3.1.0...v3.1.1) (2026-08-10)
 
 ### Dependencies
