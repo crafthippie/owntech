@@ -5,6 +5,6 @@ hugo-extended = "0.165.0"
 java = "26.0.2"
 node = "24"
 pre-commit = "4.6.2"
-task = "3.52.0"
+task = "3.53.1"
 
 "go:github.com/packwiz/packwiz" = "0.0.0-20260218225342-dfd8b68a4796"
