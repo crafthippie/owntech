@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.3.0](https://github.com/crafthippie/owntech/compare/v3.2.0...v3.3.0) (2026-08-24)
+
+### Dependencies
+
+* **minor:** update dependency task to v3.53.1 ([#131](https://github.com/crafthippie/owntech/issues/131)) ([ffcc822](https://github.com/crafthippie/owntech/commit/ffcc822b17ae0a9a16e731553084a736736c6db9))
+
 ## [3.2.0](https://github.com/crafthippie/owntech/compare/v3.1.1...v3.2.0) (2026-08-17)
 
 ### Dependencies
