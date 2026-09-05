@@ -7,4 +7,4 @@ node = "24"
 pre-commit = "4.6.2"
 task = "3.53.1"
 
-"go:github.com/packwiz/packwiz" = "0.0.0-20260218225342-dfd8b68a4796"
+"go:github.com/packwiz/packwiz" = "v0.0.0-20260905195741-a388ea7a2b7b"
