@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.3.2](https://github.com/crafthippie/owntech/compare/v3.3.1...v3.3.2) (2026-09-07)
+
+### Dependencies
+
+* **patch:** pin quay.io/crafthippie/owntech docker tag to 4c939b0 ([#133](https://github.com/crafthippie/owntech/issues/133)) ([3b70f6b](https://github.com/crafthippie/owntech/commit/3b70f6bceb4ada5816a6317c5f2ea51b79618dde))
+* **patch:** update module go:github.com/packwiz/packwiz to v0.0.0-20260902165313-9066bf845f7e ([#134](https://github.com/crafthippie/owntech/issues/134)) ([3c27a83](https://github.com/crafthippie/owntech/commit/3c27a837feaf91b9cb4925daa75e9eb693056b06))
+* **patch:** update module go:github.com/packwiz/packwiz to v0.0.0-20260906154125-ef87d964f8cb ([#135](https://github.com/crafthippie/owntech/issues/135)) ([b6858a7](https://github.com/crafthippie/owntech/commit/b6858a712c4e36652e529252e1d50fc8ed487603))
+
 ## [3.3.1](https://github.com/crafthippie/owntech/compare/v3.3.0...v3.3.1) (2026-08-31)
 
 ### Dependencies
