@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.4.0](https://github.com/crafthippie/owntech/compare/v3.3.2...v3.4.0) (2026-09-14)
+
+### Dependencies
+
+* **minor:** update dependency hugo-extended to v0.166.0 ([#136](https://github.com/crafthippie/owntech/issues/136)) ([eadae0f](https://github.com/crafthippie/owntech/commit/eadae0feda7fbaf7f8507f01b7aa7eb6a675e840))
+
 ## [3.3.2](https://github.com/crafthippie/owntech/compare/v3.3.1...v3.3.2) (2026-09-07)
 
 ### Dependencies
