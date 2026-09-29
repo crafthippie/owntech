@@ -1,7 +1,7 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-hugo-extended = "0.166.0"
+hugo-extended = "0.167.0"
 java = "26.0.2"
 node = "24"
 prek = "0.5.4"
