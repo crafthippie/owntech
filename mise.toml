@@ -3,7 +3,7 @@
 [tools]
 hugo-extended = "0.168.0"
 java = "26.0.2"
-node = "24"
+node = "26"
 prek = "0.5.5"
 task = "3.54.0"
 
