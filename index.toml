@@ -1699,7 +1699,7 @@ metafile = true
 
 [[files]]
 file = "mods/openmodularturrets.pw.toml"
-hash = "1f2b733d26831c8f76f4ac9a00d8740afc1b8d65024a0de6356e2c0cc6a992ef"
+hash = "52b8a3c3a4c8a7d61173b4773ce30136275a549990509944fbeb52f7c45b3706"
 metafile = true
 
 [[files]]
