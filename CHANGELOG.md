@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.4.1](https://github.com/crafthippie/owntech/compare/v3.4.0...v3.4.1) (2026-11-02)
+
+### Bugfixes
+
+* drop openmodularturrets as it blocks autodownloads ([7cdfb1f](https://github.com/crafthippie/owntech/commit/7cdfb1f9931eb99ae6ace133a096cdc637e20d2e))
+* upgrade to an available openmodularturrets version ([cfa3907](https://github.com/crafthippie/owntech/commit/cfa39077f9a2e794b74cead178b9fc3030968bcf))
+
+### Dependencies
+
+* **mise:** update dependency hugo-extended to v0.167.0 ([#138](https://github.com/crafthippie/owntech/issues/138)) ([a8a8fdd](https://github.com/crafthippie/owntech/commit/a8a8fddd9049fc451f39d13e5e41111641459a93))
+* **mise:** update dependency hugo-extended to v0.168.0 ([#142](https://github.com/crafthippie/owntech/issues/142)) ([bd34b4f](https://github.com/crafthippie/owntech/commit/bd34b4f51f41c87044e45a381c880a552eb77cef))
+* **mise:** update dependency hugo-extended to v0.169.0 ([6b88a2c](https://github.com/crafthippie/owntech/commit/6b88a2c836328bb55a3f5c9d51c24803f84776f5))
+* **mise:** update dependency prek to v0.5.4 ([#137](https://github.com/crafthippie/owntech/issues/137)) ([3147bef](https://github.com/crafthippie/owntech/commit/3147bef7a2e30f10085602f757246d5925a0f73e))
+* **mise:** update dependency prek to v0.5.5 ([#141](https://github.com/crafthippie/owntech/issues/141)) ([84b937c](https://github.com/crafthippie/owntech/commit/84b937cca06b63feb43efa44f0c6df0bb06e59b9))
+* **mise:** update dependency prek to v0.5.6 ([#144](https://github.com/crafthippie/owntech/issues/144)) ([92d608c](https://github.com/crafthippie/owntech/commit/92d608cee47388b1425b5d500e8b6f671f050bb8))
+* **mise:** update dependency prek to v0.5.9 ([#147](https://github.com/crafthippie/owntech/issues/147)) ([6518fc7](https://github.com/crafthippie/owntech/commit/6518fc7dbb68eee83d5b40a91280b8e431d4c62e))
+* **mise:** update dependency task to v3.54.0 ([#140](https://github.com/crafthippie/owntech/issues/140)) ([ff0139f](https://github.com/crafthippie/owntech/commit/ff0139fefc626e90884368b575c00264500a94ae))
+* **mise:** update module go:github.com/packwiz/packwiz to v0.0.0-20261014010756-170b22d78595 ([#143](https://github.com/crafthippie/owntech/issues/143)) ([1ea0695](https://github.com/crafthippie/owntech/commit/1ea0695f44e4438daf7a6b26e4e84d6acf2e569c))
+* **mise:** update node.js to v26 ([#146](https://github.com/crafthippie/owntech/issues/146)) ([cc757ce](https://github.com/crafthippie/owntech/commit/cc757ce6e955294438248108d8c80af00c099845))
+
 ## [3.4.0](https://github.com/crafthippie/owntech/compare/v3.3.2...v3.4.0) (2026-09-14)
 
 ### Dependencies
