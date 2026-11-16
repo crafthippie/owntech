@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.4.2](https://github.com/crafthippie/owntech/compare/v3.4.1...v3.4.2) (2026-11-16)
+
+### Dependencies
+
+* **mise:** update dependency hugo-extended to v0.170.0 ([#150](https://github.com/crafthippie/owntech/issues/150)) ([8efee0c](https://github.com/crafthippie/owntech/commit/8efee0c56255c16e257546267126299d96f566c8))
+* **mise:** update dependency prek to v0.5.10 ([#149](https://github.com/crafthippie/owntech/issues/149)) ([7cbecdb](https://github.com/crafthippie/owntech/commit/7cbecdbce084f65446654614232e9cfa14187fa7))
+* **mise:** update dependency prek to v0.5.11 ([#151](https://github.com/crafthippie/owntech/issues/151)) ([a7c6c9b](https://github.com/crafthippie/owntech/commit/a7c6c9bfd9b8d5d9edd87b12cd164bb7a223fca5))
+* **patch:** pin quay.io/crafthippie/owntech docker tag to c041c99 ([#148](https://github.com/crafthippie/owntech/issues/148)) ([33a9535](https://github.com/crafthippie/owntech/commit/33a95351755c979cf0126103fb5520577d5e84a9))
+
 ## [3.4.1](https://github.com/crafthippie/owntech/compare/v3.4.0...v3.4.1) (2026-11-02)
 
 ### Bugfixes
