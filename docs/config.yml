@@ -9,9 +9,12 @@ disableKinds:
   - rss
   - sitemap
 
-security:
-  allowContent:
-    - '! ^text/org$'
+cascade:
+  - build:
+      render: never
+      list: always
+    target:
+      kind: page
 
 blackfriday:
   angledQuotes: true
