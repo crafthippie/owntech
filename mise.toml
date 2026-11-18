@@ -1,10 +1,11 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-hugo-extended = "0.170.1"
+hugo = "0.170.1"
 java = "26.0.2"
 node = "26"
 prek = "0.5.11"
 task = "3.54.0"
 
 "go:github.com/packwiz/packwiz" = "v0.0.0-20261014010756-170b22d78595"
+"github:sass/dart-sass" = "1.108.2"
