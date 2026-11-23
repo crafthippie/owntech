@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.5.0](https://github.com/crafthippie/owntech/compare/v3.4.2...v3.5.0) (2026-11-23)
+
+### Features
+
+* switch to plain hugo and resolve deprecations ([d01ae01](https://github.com/crafthippie/owntech/commit/d01ae01e0cca3c4b093fd993415656ad8b2a2b0a))
+
+### Bugfixes
+
+* replace security allowContent with cascade config ([93ca895](https://github.com/crafthippie/owntech/commit/93ca895c3d1ae8d97d875f82282ce92415962bdc))
+
+### Dependencies
+
+* **mise:** update dependency hugo-extended to v0.170.1 ([#153](https://github.com/crafthippie/owntech/issues/153)) ([71d7f42](https://github.com/crafthippie/owntech/commit/71d7f427125c41cdd561ed0c0d558532728a00de))
+* **patch:** pin quay.io/crafthippie/owntech docker tag to 96d01c4 ([#152](https://github.com/crafthippie/owntech/issues/152)) ([8ae3d56](https://github.com/crafthippie/owntech/commit/8ae3d560721384c4e6e69acdd81e6287cd5a7621))
+
 ## [3.4.2](https://github.com/crafthippie/owntech/compare/v3.4.1...v3.4.2) (2026-11-16)
 
 ### Dependencies
