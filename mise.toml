@@ -4,7 +4,7 @@
 hugo = "0.170.1"
 java = "26.0.2"
 node = "26"
-prek = "0.5.11"
+prek = "0.5.12"
 task = "3.54.0"
 
 "go:github.com/packwiz/packwiz" = "v0.0.0-20261014010756-170b22d78595"
